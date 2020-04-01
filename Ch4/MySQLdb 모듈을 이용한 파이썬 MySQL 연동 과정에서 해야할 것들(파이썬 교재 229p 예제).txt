@@ -1,0 +1,17 @@
+1. 파이썬 설치
+	환경변수 등록할 것
+
+2. MySQL 설치
+	환경변수 등록할 것
+
+3. pip install로 pypi의 mysqlclient 패키지를 OS 환경에 맞게 설치.
+	만약 설치가 안되고 오류 뜰 경우 : 64비트라서 64비트로 설치 했는데 오류 뜰 경우. 32비트로 설치.
+
+4. 외부 모듈(패키지) import를 위해 시스템 환경변수에 'PYTHONPATH'라는 변수 이름으로 하여 외부 패키지가 있는 경로를 입력해준다.
+	혹시 모르니 '패키지 경로의 바로 이전 폴더 경로'까지 입력해준다.
+	Ex) C:\Users\chok6\AppData\Local\Programs\Python\Python37-32\Lib\site-packages	// 패키지 경로.
+	C:\Users\chok6\AppData\Local\Programs\Python\Python37-32\Lib			// 패키지 경로의 바로 이전 폴더 경로
+
+5. MySQL 8.0부터 약간의 변경이 생겨 예제 코드 실행 시 MySQLdb._exceptions.OperationalError: (2059, <NULL>)라는 오류가 뜰거다.
+	해결법1 : MySQL에서 기존에 생성해놨던 user에 대해서 ALTER USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; 를 입력해준다.
+	해결법2 : MySQL을 낮은버전으로 다시 설치한다.
